@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 
+    minmax(0px, 1fr) 
+    repeat(6, minmax(0, 175px)) 
+    minmax(0px, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+}
+header {
+    grid-column: 2 / 8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 0, 0, 0.3);
+    padding: 20px;
+}
+nav a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: black;
+}
+.hero-image {
+    grid-column: 2 / 5;
+    background: rgba(0, 0, 255, 0.3);
+    height: 350px;
+}
+.signup {
+    grid-column: 5 / 8;
+    background: rgba(0, 255, 0, 0.3);
+    height: 350px;
+    padding: 20px;
+}
+.signup input {
+    width: 70%;
+    padding: 10px;
+}
+.signup button {
+    padding: 10px 20px;
+}
+.tagline {
+    grid-column: 2 / 6;
+    background: rgba(255, 255, 0, 0.3);
+    height: 200px;
+    padding: 20px;
+}
+.bottom-logo {
+    grid-column: 6 / 8;
+    background: rgba(255, 0, 255, 0.3);
+    height: 200px;
+}
+
+/*trying to do a lil phone thing we dont know yet */
+@media (max-width: 768px) {
+    .hero-image,
+    .signup,
+    .tagline,
+    .bottom-logo {
+        grid-column: 2 / 8;
+    }
+}
