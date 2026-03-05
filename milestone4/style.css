@@ -6,9 +6,9 @@ body {
 .grid-container {
     display: grid;
     grid-template-columns:
-        minmax(0px, 1fr)
-        repeat(6, minmax(0, 175px))
-        minmax(0px, 1fr);
+    minmax(0px, 1fr)
+    repeat(6, minmax(0, 175px))
+    minmax(0px, 1fr);
     gap: 20px;
     padding: 20px 0;
 }
@@ -76,6 +76,7 @@ nav a {
 .bottom-logo img {
     width: 150px;
 }
+/*trying to do a lil phone thing we dont know yet */
 @media (max-width: 768px) {
     .hero-image,
     .signup,
