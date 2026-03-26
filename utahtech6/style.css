@@ -148,7 +148,7 @@ label{
   grid-column: 2 / 3;
 }
 #alumnihero {
-  background-image: url(utahtechimages/alumnihero.jpg);
+  background-image: url(alumnihero.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
