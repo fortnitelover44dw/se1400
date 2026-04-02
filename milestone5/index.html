@@ -1,253 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dixie Diesel Service</title>
-<style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(135deg, #f4f4f4, #e0e0e0);
-  color: #333;
-  line-height: 1.6;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr repeat(6, 200px) 1fr;
-  gap: 30px;
-  padding: 30px 0;
-}
-
-header {
-  grid-column: 2 / 8;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  background-color: #c00000;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-h1 {
-  color: white;
-  margin: 0;
-  font-size: 1.8em;
-  line-height: 1.2;
-}
-
-nav ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-  padding: 8px 14px;
-  border-radius: 4px;
-  font-weight: 500;
-  transition: background 0.3s;
-}
-
-nav a:hover {
-  background-color: #ff4d4d;
-}
-
-nav a.active {
-  background-color: #ff4d4d;
-}
-
-.hero-image {
-  grid-column: 2 / 8;
-}
-
-.hero-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  display: block;
-}
-
-.signup {
-  grid-column: 2 / 5;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.signup-form {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.signup input {
-  padding: 12px;
-  border: 2px solid #c00000;
-  border-radius: 6px;
-  flex: 1;
-  min-width: 200px;
-}
-
-.signup button {
-  padding: 12px 24px;
-  border: none;
-  border-radius: 6px;
-  background-color: #c00000;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.signup button:hover {
-  background-color: darkred;
-}
-
-.signup-help {
-  font-size: 0.9em;
-  color: #555;
-}
-
-.tagline {
-  grid-column: 2 / 8;
-  text-align: center;
-  margin-top: 30px;
-}
-
-.tagline p {
-  margin: 0;
-  font-weight: bold;
-  font-size: 1.1em;
-}
-
-.tagline h2 {
-  margin: 10px 0 0 0;
-  font-size: 1.8em;
-  line-height: 1.3;
-}
-
-.bottom-logo {
-  grid-column: 2 / 8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-}
-
-.bottom-logo img {
-  width: 180px;
-}
-
-@media (max-width: 992px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px;
-  }
-
-  header,
-  .hero-image,
-  .signup,
-  .tagline,
-  .bottom-logo {
-    grid-column: auto;
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .signup-form {
-    flex-direction: column;
-    width: 100%;
-    max-width: 500px;
-  }
-}
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-    align-items: center;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  nav a {
-    width: 80%;
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  .signup input {
-    width: 100%;
-  }
-
-  .bottom-logo {
-    justify-content: center;
-  }
-
-  .hero-image img,
-  .bottom-logo img {
-    width: 100%;
-    height: auto;
-  }
-}
-</style>
+    <meta charset="utf-8">
+    <title>Dixie Diesel Service</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="grid-container">
-
-  <header>
-    <h1>Dixie<br>Diesel Service</h1>
-    <nav>
-      <ul>
-        <li><a href="#" class="active">Make an appointment</a></li>
-        <li><a href="#">Customer service</a></li>
-        <li><a href="#">About us</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section class="hero-image">
-    <picture>
-      <source media="(max-width: 768px)" srcset="images/mechanic-small.jpg">
-      <source media="(max-width: 992px)" srcset="images/mechanic-medium.jpg">
-      <img src="images/mechanic.jpg" alt="Diesel mechanic working on engine">
-    </picture>
-  </section>
-
-  <section class="signup">
-    <form class="signup-form" action="#" method="post">
-      <label for="email">Enter your email:</label>
-      <input id="email" type="email" placeholder="Enter your email" required>
-      <button type="submit">Sign up</button>
-    </form>
-    <p class="signup-help">Need help signing up? Contact our customer service.</p>
-  </section>
-
-  <section class="tagline">
-    <p>Since 1956</p>
-    <h2>
-      The Repair Shop You Can Trust<br>
-      “What’s Best For You Is Best For Us”
-    </h2>
-  </section>
-
-  <footer class="bottom-logo">
-    <img src="images/logo.png" alt="Dixie Diesel logo">
-  </footer>
-
-</div>
+    <div class="grid-container">
+        <header>
+            <h1>Dixie<br>Diesel Service</h1>
+            <nav>
+                <a href="#">Make an appointment</a>
+                <a href="#">Customer service</a>
+                <a href="#">About us</a>
+            </nav>
+        </header>
+        <section class="hero-image">
+            <img src="images/mechanic.jpg" alt="Diesel mechanic working on engine">
+        </section>
+        <section class="signup">
+            <div class="signup-form">
+                <input type="email" placeholder="Enter your email">
+                <button>Sign up</button>
+            </div>
+            <p>Get Help?</p>
+        </section>
+        <section class="tagline">
+            <p>Since 1956</p>
+            <h2>
+                The Repair Shop You Can Trust<br>
+                “What’s Best For You Is Best For Us”
+            </h2>
+        </section>
+        <section class="bottom-logo">
+            <img src="images/logo.png" alt="Dixie Diesel logo">
+        </section>
+    </div>
 </body>
 </html>
