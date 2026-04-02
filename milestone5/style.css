@@ -3,85 +3,146 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: #f4f4f4;
 }
+
 .grid-container {
     display: grid;
     grid-template-columns:
-    minmax(0px, 1fr)
-    repeat(6, minmax(0, 175px))
-    minmax(0px, 1fr);
+        minmax(0px, 1fr)
+        repeat(6, minmax(0, 175px))
+        minmax(0px, 1fr);
     gap: 20px;
     padding: 20px 0;
 }
+
 header {
     grid-column: 2 / 8;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 h1 {
     color: #c00000;
     margin: 0;
 }
+
 nav {
     display: flex;
     gap: 20px;
 }
+
 nav a {
     text-decoration: none;
     background: #9e9e9e;
     padding: 10px 20px;
     color: black;
 }
+
 .hero-image {
     grid-column: 2 / 5;
 }
+
 .hero-image img {
     width: 100%;
     height: auto;
 }
+
 .signup {
     grid-column: 5 / 8;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 .signup-form {
     display: flex;
     gap: 10px;
 }
+
 .signup input {
     padding: 10px;
     border: 2px solid red;
     width: 220px;
 }
+
 .signup button {
     background: red;
     border: none;
     padding: 10px 20px;
 }
+
 .tagline {
     grid-column: 2 / 5;
     text-align: center;
 }
+
 .tagline p {
     margin-top: 20px;
 }
+
 .bottom-logo {
     grid-column: 6 / 8;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
+
 .bottom-logo img {
     width: 150px;
 }
 
+@media (max-width: 992px) {
+    .grid-container {
+        grid-template-columns: minmax(0px, 1fr) repeat(4, minmax(0, 1fr)) minmax(0px, 1fr);
+    }
+    .hero-image {
+        grid-column: 2 / 6;
+    }
+    .signup {
+        grid-column: 2 / 6;
+    }
+    .tagline {
+        grid-column: 2 / 6;
+    }
+    .bottom-logo {
+        grid-column: 4 / 6;
+        justify-content: center;
+    }
+}
+
 @media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
     .hero-image,
     .signup,
     .tagline,
     .bottom-logo {
-        grid-column: 2 / 8;
+        grid-column: 1 / 2;
+    }
+
+    .signup-form {
+        flex-direction: column;
+    }
+
+    .signup input,
+    .signup button {
+        width: 100%;
+    }
+
+    .bottom-logo {
+        justify-content: center;
     }
 }

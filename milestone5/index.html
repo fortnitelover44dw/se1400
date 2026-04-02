@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dixie Diesel Service</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,9 +16,15 @@
                 <a href="#">About us</a>
             </nav>
         </header>
+
         <section class="hero-image">
-            <img src="images/mechanic.jpg" alt="Diesel mechanic working on engine">
+            <picture>
+                <source media="(max-width: 768px)" srcset="images/mechanic-small.jpg">
+                <source media="(max-width: 992px)" srcset="images/mechanic-medium.jpg">
+                <img src="images/mechanic.jpg" alt="Diesel mechanic working on engine">
+            </picture>
         </section>
+
         <section class="signup">
             <div class="signup-form">
                 <input type="email" placeholder="Enter your email">
@@ -25,6 +32,7 @@
             </div>
             <p>Get Help?</p>
         </section>
+
         <section class="tagline">
             <p>Since 1956</p>
             <h2>
@@ -32,6 +40,7 @@
                 “What’s Best For You Is Best For Us”
             </h2>
         </section>
+
         <section class="bottom-logo">
             <img src="images/logo.png" alt="Dixie Diesel logo">
         </section>
