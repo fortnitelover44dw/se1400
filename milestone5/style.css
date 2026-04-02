@@ -1,156 +1,181 @@
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f4f4;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #f4f4f4, #e0e0e0);
+  color: #333;
+  line-height: 1.6;
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: minmax(1fr, 1fr) repeat(6, minmax(0, 175px)) minmax(1fr, 1fr);
-    gap: 20px;
-    padding: 20px 0;
+  display: grid;
+  grid-template-columns: 1fr repeat(6, 200px) 1fr;
+  gap: 30px;
+  padding: 30px 0;
 }
 
 header {
-    grid-column: 2 / 8;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  grid-column: 2 / 8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #c00000;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 h1 {
-    color: #c00000;
-    margin: 0;
+  color: white;
+  margin: 0;
+  font-size: 1.8em;
 }
 
 nav {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 nav a {
-    text-decoration: none;
-    background: #9e9e9e;
-    padding: 10px 20px;
-    color: black;
+  text-decoration: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background 0.3s;
 }
 
+nav a:hover {
+  background-color: #ff4d4d;
+}
+
+nav a.active {
+  background-color: #ff4d4d;
+}
 
 .hero-image {
-    grid-column: 2 / 5;
+  grid-column: 2 / 5;
 }
 
 .hero-image img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
 }
 
 .signup {
-    grid-column: 5 / 8;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  grid-column: 5 / 8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
 }
 
 .signup-form {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .signup input {
-    padding: 10px;
-    border: 2px solid red;
-    width: 220px;
+  padding: 12px;
+  border: 2px solid red;
+  border-radius: 6px;
+  flex: 1;
+  min-width: 200px;
 }
 
 .signup button {
-    background: red;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.signup button:hover {
+  background-color: darkred;
 }
 
 .tagline {
-    grid-column: 2 / 5;
-    text-align: center;
+  grid-column: 2 / 5;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .tagline p {
-    margin-top: 20px;
+  margin-top: 20px;
+  font-size: 1.2em;
 }
 
 .bottom-logo {
-    grid-column: 6 / 8;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  grid-column: 6 / 8;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .bottom-logo img {
-    width: 150px;
+  width: 180px;
 }
 
 @media (max-width: 992px) {
-    .grid-container {
-        grid-template-columns: 1fr; 
-    }
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
 
-    .hero-image,
-    .signup,
-    .tagline,
-    .bottom-logo {
-        width: 768px;
-        margin: 0 auto;
-        grid-column: auto; 
-    }
+  header,
+  .hero-image,
+  .signup,
+  .tagline,
+  .bottom-logo {
+    grid-column: auto;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .signup-form {
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+  }
 }
 
 @media (max-width: 768px) {
-    .grid-container {
-        grid-template-columns: 1fr; 
-        gap: 15px;
-        padding: 10px;
-    }
+  header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+  }
 
-    header {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-    }
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
 
-    nav {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        align-items: center;
-    }
+  nav a {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+  }
 
-    .hero-image,
-    .signup,
-    .tagline,
-    .bottom-logo {
-        width: 100%;
-        margin: 0;
-    }
+  .signup input {
+    width: 100%;
+  }
 
-    .signup-form {
-        flex-direction: column;
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
-    }
+  .bottom-logo {
+    justify-content: center;
+  }
 
-    .signup input {
-        width: 100%;
-    }
-
-    .bottom-logo {
-        justify-content: center;
-    }
-
-    .hero-image img,
-    .bottom-logo img {
-        width: 100%;
-        height: auto;
-    }
+  .hero-image img,
+  .bottom-logo img {
+    width: 100%;
+    height: auto;
+  }
 }
