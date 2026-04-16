@@ -227,6 +227,9 @@ tr:nth-of-type(even) {
 }
 
 @media only screen and (max-width: 900px) {
+  #shoppingcart {
+    grid-template-columns: 1fr 1fr;
+  }
   nav {
     grid-column: 1 / 5;
     position: static;
@@ -257,6 +260,9 @@ tr:nth-of-type(even) {
 }
 
 @media only screen and (max-width: 600px) {
+  #shoppingcart{
+    grid-template-columns: 1fr;
+  }
   header h1 {
     background-image: none;
     text-align: center;
