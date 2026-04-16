@@ -1,4 +1,6 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   background: linear-gradient(to bottom, #eeeeee, #ffffff);
@@ -28,7 +30,7 @@ body {
 
 header {
   background-color: #003058;
-  color: #FFFFFF;
+  color: #ffffff;
   font-family: Georgia, serif;
   grid-row: 1 / 2;
   grid-column: 2 / -2;
@@ -52,8 +54,8 @@ header h1 {
 nav {
   font-weight: bold;
   background-color: #424242;
-  padding: 0;
   margin: 0;
+  padding: 0;
   position: sticky;
   top: 0;
   grid-row: 2 / 3;
@@ -61,11 +63,11 @@ nav {
 }
 
 nav ul {
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-flow: row nowrap;
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li {
@@ -73,12 +75,12 @@ nav ul li {
 }
 
 nav a {
+  display: block;
+  padding: 1rem 0;
+  text-align: center;
   text-decoration: none;
   color: #ffffff;
-  padding: 1rem 0rem;
-  display: block;
-  text-align: center;
-  transition: background-color 0.5s ease-out; 
+  transition: background-color 0.5s ease-out;
 }
 
 nav a:hover {
@@ -142,7 +144,7 @@ video {
 }
 
 footer {
-  font-size: 0.70rem;
+  font-size: 0.7rem;
   font-style: italic;
   text-align: center;
   padding: 1rem;
@@ -152,13 +154,18 @@ footer {
 
 form {
   display: grid;
-  grid-template-rows: auto;
   grid-template-columns: 200px 1fr;
   gap: 0.75rem;
   width: 100%;
 }
 
-input, textarea {
+label {
+  padding: 10px;
+  text-align: right;
+}
+
+input,
+textarea {
   font-size: 1rem;
   padding: 10px;
   color: #666666;
@@ -166,14 +173,10 @@ input, textarea {
   border: none;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   outline: none;
   background-color: #f0f0f0;
-}
-
-label {
-  padding:10px;
-  text-align: right;
 }
 
 #mySubmit {
@@ -181,84 +184,15 @@ label {
   grid-column: 2 / 3;
 }
 
-#alumnihero {
-  background-image: url(alumnihero.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;   
-  background-position: center;
-}
-#shophero {
-  background-image: url(shophero.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;   
-  background-position: center;
-}
-
-@media only screen and (max-width: 1100px) {
-  #wrapper {
-    grid-template-columns: 1fr repeat(6, minmax(0, 150px)) 1fr;
-  }
-}
-
-@media only screen and (max-width: 900px) {
-  nav {
-    grid-row: 2 / 3;
-    grid-column: 1 / 5;
-    position: static;
-  }
-  nav ul {
-    flex-flow: column nowrap;
-  }
-  #homehero,
-  #studenthero,
-  #facultyhero,
-  #alumnihero,
-  #shophero {
-    grid-row: 2 / 3;
-    grid-column: 5 / 8;
-    height: auto;
-  }
-  main img {
-    float: none;
-    width: 100%;
-    height: auto;
-    padding-left: 0;
-  }
-
-  video {
-    float: none;
-    margin: 0;
-    width: 100%;
-    height: auto;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  header h1 {
-    background-image: none;
-    text-align: center;
-  }
-  nav {
-    grid-row: 2 / 3;
-    grid-column: 1 / -1;
-  }
-  #homehero,
-  #studenthero,
-  #facultyhero,
-  #alumnihero,
-  #shophero {
-    display: none;
-  }
-}
-
 table {
   margin: 0 auto;
-  border: 1px solid #424242;
   width: 100%;
+  border: 1px solid #424242;
   border-collapse: collapse;
 }
 
-td, th {
+td,
+th {
   padding: 5px;
   border: 1px solid #424242;
 }
@@ -272,5 +206,71 @@ td {
 }
 
 tr:nth-of-type(even) {
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
+}
+
+#shoppingcart {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+#shoppingcart img {
+  width:100%;
+  height:auto;
+}
+
+@media only screen and (max-width: 1100px) {
+  #wrapper {
+    grid-template-columns: 1fr repeat(6, minmax(0, 150px)) 1fr;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  nav {
+    grid-column: 1 / 5;
+    position: static;
+  }
+
+  nav ul {
+    flex-flow: column nowrap;
+  }
+
+  #homehero,
+  #studenthero,
+  #facultyhero,
+  #alumnihero,
+  #shophero {
+    grid-row: 2 / 3;
+    grid-column: 5 / 8;
+    height: auto;
+  }
+
+  main img,
+  video {
+    float: none;
+    width: 100%;
+    height: auto;
+    padding-left: 0;
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  header h1 {
+    background-image: none;
+    text-align: center;
+  }
+
+  nav {
+    grid-column: 1 / -1;
+  }
+
+  #homehero,
+  #studenthero,
+  #facultyhero,
+  #alumnihero,
+  #shophero {
+    display: none;
+  }
 }
