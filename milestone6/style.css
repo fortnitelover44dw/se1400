@@ -1,0 +1,199 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: 
+        repeating-linear-gradient(
+            45deg,
+            #f4f4f4,
+            #f4f4f4 20px,
+            #eaeaea 20px,
+            #eaeaea 40px
+        );
+    color: #333;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns:
+        minmax(0px, 1fr)
+        repeat(6, minmax(0, 175px))
+        minmax(0px, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+}
+
+header {
+    grid-column: 2 / 8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 0;
+}
+
+h1 {
+    color: #c00000;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 10px 15px;
+    background: #c00000; 
+    color: white;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background: #9e0000; 
+    transform: scale(1.05);
+}
+
+.hero-image {
+    grid-column: 2 / 5;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+}
+
+.signup {
+    grid-column: 5 / 8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signup-form {
+    display: flex;
+    gap: 10px;
+}
+
+.signup input {
+    padding: 10px;
+    border: 2px solid red;
+    width: 220px;
+}
+
+.signup button {
+    background: red;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.signup button:hover {
+    background: darkred;
+}
+
+.tagline {
+    grid-column: 2 / 5;
+    text-align: center;
+}
+
+.tagline p {
+    margin-top: 20px;
+}
+
+.bottom-logo {
+    grid-column: 6 / 8;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.bottom-logo img {
+    width: 150px;
+}
+
+.content, .services, .footer {
+    grid-column: 2 / 8;
+}
+
+.page-img {
+    width: 100%;
+    max-width: 500px;
+    margin: 15px 0;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.contact-form button {
+    background: #c00000;
+    color: white;
+    padding: 10px;
+    border: none;
+}
+
+@media (max-width: 992px) {
+    .grid-container {
+        grid-template-columns: minmax(0px, 1fr) repeat(4, minmax(0, 1fr)) minmax(0px, 1fr);
+    }
+    .hero-image,
+    .signup,
+    .tagline {
+        grid-column: 2 / 6;
+    }
+    .bottom-logo {
+        grid-column: 4 / 6;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .hero-image,
+    .signup,
+    .tagline,
+    .bottom-logo {
+        grid-column: 1 / 2;
+    }
+
+    .signup-form {
+        flex-direction: column;
+    }
+
+    .signup input,
+    .signup button {
+        width: 100%;
+    }
+
+    .bottom-logo {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+}
