@@ -145,6 +145,46 @@ nav a:hover {
     border: none;
 }
 
+header {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+nav a {
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    transform: translateY(-2px);
+    background: #9e0000;
+}
+
+button:hover {
+    transform: scale(1.05);
+    transition: 0.2s ease;
+}
+
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+body {
+    scroll-behavior: smooth;
+}
+
+.content, .tagline {
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 @media (max-width: 992px) {
     .grid-container {
         grid-template-columns: minmax(0px, 1fr) repeat(4, minmax(0, 1fr)) minmax(0px, 1fr);
