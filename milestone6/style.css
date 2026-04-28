@@ -10,21 +10,15 @@ body {
         #eaeaea 40px
     );
     scroll-behavior: smooth;
-
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns:
-        minmax(0px, 1fr)
-        repeat(6, minmax(0, 175px))
-        minmax(0px, 1fr);
-    gap: 20px;
-    padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 header {
-    grid-column: 2 / 8;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -63,17 +57,24 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
-.hero-image {
-    grid-column: 2 / 5;
-}
-
 .hero-image img {
     width: 100%;
     height: auto;
+    border-radius: 5px;
+}
+
+.hero-image,
+.signup {
+    flex: 1 1 400px;
+}
+
+.hero-signup-wrapper {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .signup {
-    grid-column: 5 / 8;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -82,12 +83,14 @@ nav a:hover {
 .signup-form {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .signup input {
     padding: 10px;
     border: 2px solid red;
-    width: 220px;
+    flex: 1;
+    min-width: 200px;
 }
 
 .signup button {
@@ -105,7 +108,6 @@ nav a:hover {
 }
 
 .tagline {
-    grid-column: 2 / 5;
     text-align: center;
 }
 
@@ -114,27 +116,18 @@ nav a:hover {
 }
 
 .content,
-.services,
-.footer {
-    grid-column: 2 / 8;
+.services {
+    margin-top: 20px;
 }
 
-.content,
-.tagline {
-    animation: fadeIn 0.8s ease-in;
-}
-
-.page-img {
-    width: 100%;
-    max-width: 500px;
-    margin: 15px 0;
+.services ul {
+    padding-left: 20px;
 }
 
 .bottom-logo {
-    grid-column: 6 / 8;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    margin-top: 20px;
 }
 
 .bottom-logo img {
@@ -162,6 +155,11 @@ select {
     border: none;
 }
 
+.content,
+.tagline {
+    animation: fadeIn 0.8s ease-in;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -173,27 +171,7 @@ select {
     }
 }
 
-@media (max-width: 992px) {
-    .grid-container {
-        grid-template-columns: minmax(0px, 1fr) repeat(4, 1fr) minmax(0px, 1fr);
-    }
-
-    .hero-image,
-    .signup,
-    .tagline {
-        grid-column: 2 / 6;
-    }
-
-    .bottom-logo {
-        grid-column: 4 / 6;
-        justify-content: center;
-    }
-}
-
 @media (max-width: 768px) {
-    .grid-container {
-        grid-template-columns: 1fr;
-    }
 
     header {
         flex-direction: column;
@@ -206,11 +184,8 @@ select {
         margin-top: 10px;
     }
 
-    .hero-image,
-    .signup,
-    .tagline,
-    .bottom-logo {
-        grid-column: 1 / 2;
+    .hero-signup-wrapper {
+        flex-direction: column;
     }
 
     .signup-form {
@@ -224,6 +199,5 @@ select {
 
     .bottom-logo {
         justify-content: center;
-        margin-bottom: 20px;
     }
 }
